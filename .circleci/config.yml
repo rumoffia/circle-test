@@ -23,6 +23,8 @@ jobs:
           - v1-dependencies-
 
       - run: yarn
+      - run: pwd
+      - run: ../ && pwd
 
       - save_cache:
           paths:
