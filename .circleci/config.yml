@@ -11,13 +11,14 @@ jobs:
 
       - run: pwd
 
-      - run: echo $Fire
+      - run: echo $FIRE
 
 workflows:
   version: 2
   build-deploy:
     jobs:
       - build:
+          context: Slash
           filters:
             branches:
               only: master
