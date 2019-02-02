@@ -32,3 +32,11 @@ jobs:
         
       # run tests!
       - run: cd ./work && yarn deploy:staging
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build:
+        filters:
+          branches:
+            only: master
