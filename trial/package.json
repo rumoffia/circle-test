@@ -42,6 +42,7 @@
     "build:production": "REACT_APP_ENV=production npm run build",
     "deploy:prod": "yarn build:production && yarn firebase:prod",
     "deploy:staging": "yarn build:staging && yarn firebase:staging",
+    "deploy:circle": "firebase deploy --token=$FIREBASE_DEPLOY_TOKEN",
     "firebase:staging": "firebase use dev && firebase deploy --only hosting:sandbox-slashclub",
     "firebase:prod": "firebase deploy --only hosting:slashclub",
     "test": "react-scripts test",

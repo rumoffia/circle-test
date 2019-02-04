@@ -25,7 +25,7 @@ jobs:
 
       - run:
             name: Deploy to firebase
-            command: cd ./trial && yarn firebase:prod
+            command: cd ./trial && yarn deploy:circle
 
       - run: echo $FIRE
 
