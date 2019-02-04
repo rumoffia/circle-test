@@ -40,6 +40,6 @@ workflows:
           context: Slash
           filters:
             branches:
-              only: slash-staging
+              only: /slash-*/
 
 
