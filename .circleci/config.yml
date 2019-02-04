@@ -14,11 +14,12 @@ jobs:
               - v1-node-{{ checksum "yarn.lock" }}
               - v1-node-
 
+      - run: ls && cd work && ls
+
       - run:
             name: Install dependencies
             command: yarn install --modules-folder ./work
 
-      - run: ls && cd work && ls
 
       - run:
             name: Run build script
