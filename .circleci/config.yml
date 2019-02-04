@@ -11,23 +11,23 @@ jobs:
       - restore_cache:
             name: Restore node_modules cache
             keys:
-              - v1-node-{{ checksum "./native-web/yarn.lock" }}
+              - v1-node-{{ checksum "./test/yarn.lock" }}
               - v1-node-
 
       - run: ls && cd work && ls
 
       - run:
             name: Install dependencies
-            command: cd ./native-web && yarn install
+            command: cd ./test && yarn install
 
 
       - run:
             name: Run build script
-            command: cd ./native-web && yarn build
+            command: cd ./test && yarn build
 
       - run:
             name: Deploy to firebase
-            command: cd ./native-web && yarn firebase:prod
+            command: cd ./test && yarn firebase:prod
 
       - run: echo $FIRE
 
