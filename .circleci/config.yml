@@ -11,8 +11,8 @@ jobs:
       - restore_cache:
             name: Restore node_modules cache
             keys:
-        - slash-{{ checksum "yarn.lock" }}
-        - slash-
+              - v1-node-{{ checksum "yarn.lock" }}
+              - v1-node-
 
       - run:
             name: Install dependencies
