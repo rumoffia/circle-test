@@ -18,13 +18,15 @@ jobs:
             name: Install dependencies
             command: yarn install --modules-folder ./work
 
+      - run: ls && cd work && ls
+
       - run:
             name: Run build script
             command: cd ./work && yarn build
 
       - run:
             name: Deploy to firebase
-            command: cd ./work && yarn firebase:prod
+            command: cd ./work && ls && yarn firebase:prod
 
       - run: echo $FIRE
 
