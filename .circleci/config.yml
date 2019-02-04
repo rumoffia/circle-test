@@ -8,8 +8,23 @@ jobs:
 
     steps:
       - checkout
+      - restore_cache:
+            name: Restore node_modules cache
+            keys:
+        - slash-{{ checksum "yarn.lock" }}
+        - slash-
 
-      - run: pwd
+      - run:
+            name: Install dependencies
+            command: yarn install --modules-folder ./work
+
+      - run:
+            name: Run build script
+            command: cd ./work && yarn build
+
+      - run:
+            name: Deploy to firebase
+            command: cd ./work && yarn firebase:prod
 
       - run: echo $FIRE
 
