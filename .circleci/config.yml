@@ -40,5 +40,5 @@ workflows:
           context: Slash
           filters:
             branches:
-              only: master
+              only: staging
 
