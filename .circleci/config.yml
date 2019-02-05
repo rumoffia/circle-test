@@ -16,8 +16,8 @@ jobs:
       - run:
             name: Load variables from file
             command: |
-              export $(grep -v '^#' ./trial/.env | xargs)
-              source $BASH_ENV
+              env $(grep -v '^#' ./trial/.env | xargs)
+              env
 
       - run:
             name: Test availability
