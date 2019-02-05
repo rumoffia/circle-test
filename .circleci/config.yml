@@ -15,7 +15,7 @@ jobs:
               - v1-node-
       - run:
             name: Load variables from file
-            command: export $(grep -v '^#' .env | xargs)
+            command: export $(grep -v '^#' ./trial/.env | xargs)
 
       - run:
             name: Test availability
