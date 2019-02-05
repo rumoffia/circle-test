@@ -13,6 +13,13 @@ jobs:
             keys:
               - v1-node-{{ checksum "./trial/yarn.lock" }}
               - v1-node-
+      - run:
+            name: Load variables from file
+            command: export $(grep -v '^#' .env | xargs)
+
+      -run:
+            name: Test availability
+            command: echo $APP_DOMAIN
 
       - run:
             name: Install dependencies
