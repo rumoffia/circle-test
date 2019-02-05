@@ -8,15 +8,6 @@ jobs:
 
     steps:
       - checkout
-      - run:
-            name: Change working directory
-            command: |
-              echo 'export CIRCLE_WORKING_DIRECTORY="~/project/trial"' >> $BASH_ENV
-              echo 'export PWD="~/project/trial"' >> $BASH_ENV
-      - run:
-            name: Testing working dir
-            command: pwd
-
       - restore_cache:
             name: Restore node_modules cache
             keys:
@@ -25,16 +16,11 @@ jobs:
       - run:
             name: Load variables from file
             command: |
-              env
-              set -a
-              . ./trial/.env
-              set +a
-              env
+              . ./export.sh
 
       - run:
             name: Test availability
             command: |
-              env
               echo $APP_DOMAIN
 
       - run:
