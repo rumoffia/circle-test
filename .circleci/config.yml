@@ -17,7 +17,7 @@ jobs:
             name: Load variables from file
             command: export $(grep -v '^#' .env | xargs)
 
-      -run:
+      - run:
             name: Test availability
             command: echo $APP_DOMAIN
 
