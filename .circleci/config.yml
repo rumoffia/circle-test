@@ -8,6 +8,14 @@ jobs:
 
     steps:
       - checkout
+      - run:
+            name: Change working directory
+            command: |
+              echo 'export CIRCLE_WORKING_DIRECTORY="~/project/trial" >> $BASH_ENV
+      - run:
+            name: Testing working dir
+            command: pwd
+
       - restore_cache:
             name: Restore node_modules cache
             keys:
