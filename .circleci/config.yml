@@ -16,7 +16,7 @@ jobs:
       - run:
             name: Load variables from file
             command: |
-              . ./trial/export.sh
+              . ./export.sh ./trial/.env
               env
 
       - run:
