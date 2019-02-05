@@ -17,6 +17,7 @@ jobs:
             name: Load variables from file
             command: |
               . ./trial/export.sh
+              env
 
       - run:
             name: Test availability
