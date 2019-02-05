@@ -16,13 +16,17 @@ jobs:
       - run:
             name: Load variables from file
             command: |
+              env
               set -a
               . ./trial/.env
               set +a
+              env
 
       - run:
             name: Test availability
-            command: echo $APP_DOMAIN
+            command: |
+              env
+              echo $APP_DOMAIN
 
       - run:
             name: Install dependencies
