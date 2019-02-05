@@ -11,7 +11,7 @@ jobs:
       - run:
             name: Change working directory
             command: |
-              echo 'export CIRCLE_WORKING_DIRECTORY="~/project/trial" >> $BASH_ENV
+              echo 'export CIRCLE_WORKING_DIRECTORY="~/project/trial"' >> $BASH_ENV
       - run:
             name: Testing working dir
             command: pwd
